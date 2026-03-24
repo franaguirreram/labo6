@@ -1,0 +1,111 @@
+% ==============================================================
+%  informe.tex — Plantilla de informe para Labo 6
+%  Compilar con: pdflatex informe.tex (+ biber si usás biblatex)
+% ==============================================================
+\documentclass[12pt, a4paper]{article}
+
+% ── Encoding y fuentes ────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+% ── Matemática y física ───────────────────────────────────────
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}           % unidades del SI: \SI{9.8}{m/s^2}
+\sisetup{
+    output-decimal-marker = {,},
+    separate-uncertainty  = true,
+}
+
+% ── Tablas y figuras ──────────────────────────────────────────
+\usepackage{booktabs}          % \toprule, \midrule, \bottomrule
+\usepackage{graphicx}
+\usepackage{float}             % opción [H] para figuras
+\usepackage{caption}
+
+% ── Bibliografía ──────────────────────────────────────────────
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\addbibresource{referencias.bib}
+
+% ── Otros ─────────────────────────────────────────────────────
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+% ==============================================================
+\title{Práctica NN: Título del experimento}
+\author{Nombre Apellido}
+\date{\today}
+% ==============================================================
+
+\begin{document}
+
+\maketitle
+
+% ── Resumen ───────────────────────────────────────────────────
+\begin{abstract}
+Breve descripción del experimento, metodología principal y resultado central.
+\end{abstract}
+
+% ── 1. Introducción ───────────────────────────────────────────
+\section{Introducción}
+
+Contexto teórico mínimo necesario para entender el experimento.
+Citar referencias relevantes \cite{ejemplo}.
+
+% ── 2. Montaje experimental ───────────────────────────────────
+\section{Montaje experimental}
+
+Describir el setup, instrumentos y condiciones de medición.
+
+% ── 3. Análisis de datos ──────────────────────────────────────
+\section{Análisis de datos}
+
+\subsection{Procesamiento}
+
+Describir cómo se procesaron los datos (filtros, ajustes, etc.).
+
+\subsection{Propagación de incertezas}
+
+Expresar las incertezas de las magnitudes derivadas.
+
+% Ejemplo de figura
+% NOTA: compilar desde la carpeta informe/ con: pdflatex informe.tex
+%       La ruta ../figuras/ asume que el directorio de trabajo es informe/
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../figuras/fig_ejemplo.pdf}
+    \caption{Descripción de la figura.}
+    \label{fig:ejemplo}
+\end{figure}
+
+% ── 4. Resultados ─────────────────────────────────────────────
+\section{Resultados}
+
+Presentar los resultados principales con sus incertezas.
+Por ejemplo: $g = \SI{9.79 \pm 0.05}{m/s^2}$.
+
+% Ejemplo de tabla
+\begin{table}[H]
+    \centering
+    \caption{Resultados del ajuste.}
+    \label{tab:resultados}
+    \begin{tabular}{lcc}
+        \toprule
+        Magnitud & Valor & Incerteza \\
+        \midrule
+        $g$ & \SI{9.79}{m/s^2} & \SI{0.05}{m/s^2} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% ── 5. Conclusiones ───────────────────────────────────────────
+\section{Conclusiones}
+
+Discutir los resultados en relación con los valores esperados o teóricos.
+Mencionar fuentes de error sistemático y posibles mejoras.
+
+% ── Bibliografía ──────────────────────────────────────────────
+\printbibliography
+
+\end{document}

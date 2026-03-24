@@ -1,0 +1,74 @@
+# ==============================================================
+#  .gitignore — Labo 6
+#  Qué NO subir al repositorio
+# ==============================================================
+
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+*.whl
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# ── Jupyter ───────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── LaTeX ─────────────────────────────────────────────────────
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+*.vrb
+# Mantener los .pdf de los informes compilados (comentar si no se quieren)
+# *.pdf
+
+# ── Datos grandes / binarios ──────────────────────────────────
+# Descomentá las extensiones que uses si los archivos son grandes
+# *.csv
+# *.xlsx
+# *.hdf5
+# *.h5
+# *.npy
+# *.npz
+# *.mat
+
+# ── Sistema operativo ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editores / IDEs ───────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Credenciales y configuración local ───────────────────────
+.env
+*.secret
+config_local.py

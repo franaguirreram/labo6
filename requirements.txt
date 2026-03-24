@@ -1,0 +1,30 @@
+# ==============================================================
+#  requirements.txt — Labo 6
+#  Dependencias de Python para análisis de datos en física
+# ==============================================================
+#
+#  Instalación:
+#      pip install -r requirements.txt
+#
+#  Se recomienda usar un entorno virtual:
+#      python -m venv .venv
+#      source .venv/bin/activate   # Linux / macOS
+#      .venv\Scripts\activate      # Windows
+#      pip install -r requirements.txt
+
+# ── Cómputo numérico ──────────────────────────────────────────
+numpy
+scipy
+
+# ── Análisis de datos ─────────────────────────────────────────
+pandas
+
+# ── Visualización ─────────────────────────────────────────────
+matplotlib
+
+# ── Notebooks ─────────────────────────────────────────────────
+jupyter
+ipykernel
+
+# ── Utilidades ────────────────────────────────────────────────
+tqdm          # barras de progreso
