@@ -1,7 +1,6 @@
-# Labo 6 — Laboratorio de Física Experimental
+# Labo 6 — Implementación de una platina piezoeléctrica para corrección activa de deriva en MINFLUX
 
-Repositorio de trabajo para la materia **Laboratorio 6** de la carrera de Física.  
-Contiene el análisis, datos, figuras e informe del proyecto experimental.
+Repositorio de trabajo para la materia **Laboratorio 6** de la carrera de Física. Contiene el análisis, datos, figuras e informe del proyecto experimental.
 
 ---
 
@@ -36,26 +35,6 @@ source .venv/bin/activate    # Linux / macOS
 pip install -r requirements.txt
 jupyter notebook
 ```
-
----
-
-## Qué subir y qué no subir
-
-| ✅ Subir | ❌ No subir |
-|---|---|
-| Código Python / notebooks | Entorno virtual (`.venv/`) |
-| Datos crudos (< 10 MB) | Archivos compilados de LaTeX (`.aux`, `.log`, etc.) |
-| Figuras finales (PDF/PNG) | Checkpoints de Jupyter |
-| Fuentes LaTeX (`.tex`, `.bib`) | Archivos del sistema (`.DS_Store`, `Thumbs.db`) |
-
-> Ver `.gitignore` para la lista completa de exclusiones.
-
----
-
-## Dependencias
-
-Listadas en [`requirements.txt`](requirements.txt).  
-Para LaTeX se recomienda **TeX Live** (Linux/macOS) o **MiKTeX** (Windows).
 
 ---
 
