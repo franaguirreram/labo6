@@ -1,56 +1,29 @@
 # Guía de uso — Labo 6
 
-Convenciones y flujo de trabajo para mantener el repositorio ordenado durante la cursada.
-
----
-
-## Estructura de una práctica
-
-Cada práctica vive en su propia carpeta dentro de `practicas/`.  
-Copiá la plantilla con:
-
-```bash
-cp -r templates/practica practicas/p02-nombre-de-la-practica
-```
-
-Estructura interna de cada práctica:
-
-```
-practicas/pNN-nombre/
-├── README.md           # Objetivo, setup, observaciones clave
-├── analisis.ipynb      # Notebook principal de análisis
-├── datos/
-│   ├── crudos/         # Datos originales sin modificar
-│   └── procesados/     # Datos derivados, limpios
-├── figuras/            # Gráficos generados por el notebook
-└── informe/
-    ├── informe.tex     # Informe principal
-    └── referencias.bib
-```
+Convenciones y flujo de trabajo para mantener el repositorio ordenado.
 
 ---
 
 ## Convenciones de nombres
 
-- **Carpetas de práctica**: `pNN-descripcion` (ej. `p01-pendulo-simple`)
-- **Notebooks**: siempre `analisis.ipynb` dentro de la carpeta de la práctica
 - **Scripts en `scripts/`**: `nombre_descriptivo.py` (guiones bajos)
 - **Datos crudos**: incluir fecha si es relevante → `medicion_2025-04-10.csv`
 - **Figuras**: `fig_variable_vs_variable.pdf` (ej. `fig_posicion_vs_tiempo.pdf`)
+- Usá minúsculas y guiones (`-`) para carpetas; guiones bajos (`_`) para archivos Python.
 
 ---
 
-## Commits recomendados
+## Flujo de trabajo
 
-Mensajes cortos y descriptivos:
-
-```
-p01: datos crudos del experimento
-p01: notebook de análisis completado
-p01: figuras exportadas
-p01: borrador del informe
-p01: informe final
-```
+1. Volcar los datos crudos en `datos/crudos/`.
+2. Analizar en `analisis.ipynb` y guardar datos procesados en `datos/procesados/`.
+3. Exportar figuras finales a `figuras/`.
+4. Redactar el informe en LaTeX dentro de `informes/`.
+5. Hacer commit con mensajes descriptivos:
+   ```
+   git add datos/crudos/medicion_2025-04-10.csv
+   git commit -m "agrego datos crudos de la medición"
+   ```
 
 ---
 
@@ -61,34 +34,33 @@ p01: informe final
 - Datos crudos y procesados (si pesan menos de ~10 MB)
 - Figuras finales (`.pdf`, `.png`)
 - Fuentes LaTeX (`.tex`, `.bib`)
-- PDFs de informes compilados (opcional pero útil)
 
 **No subir:**
 - Entorno virtual (`.venv/`)
 - Archivos auxiliares de LaTeX (`.aux`, `.log`, `.synctex.gz`, etc.)
 - Checkpoints de Jupyter (`.ipynb_checkpoints/`)
 - Archivos del sistema (`.DS_Store`, `Thumbs.db`)
-- Datos muy grandes (> 10 MB) → guardá el enlace o usá Git LFS
+- Datos muy grandes (> 10 MB)
 
 ---
 
 ## Notas de LaTeX
 
-- Compilar desde la carpeta del informe:
-  ```bash
-  cd practicas/p01-pendulo-simple/informe
-  pdflatex informe.tex
-  biber informe       # o bibtex si usás bibtex
-  pdflatex informe.tex
-  ```
-- No es necesario commitear los archivos auxiliares; el `.gitignore` los excluye.
+Compilar desde la carpeta del informe:
+
+```bash
+cd informes
+pdflatex informe.tex
+biber informe
+pdflatex informe.tex
+```
 
 ---
 
 ## Notas de Python / Jupyter
 
-- Siempre trabajar con el entorno virtual activado.
-- Limpiar las salidas del notebook antes de commitear (opcional pero recomendado):
+- Trabajar siempre con el entorno virtual activado.
+- Limpiar salidas antes de commitear (opcional):
   ```bash
   jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace analisis.ipynb
   ```
